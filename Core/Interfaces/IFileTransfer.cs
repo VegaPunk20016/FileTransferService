@@ -1,16 +1,16 @@
 namespace FileTransferService.Core.Interfaces;
 
 /// <summary>
-/// Performs the actual file transfer operation.
+/// Interface for transferring files.
 /// </summary>
 public interface IFileTransfer
 {
     /// <summary>
-    /// Transfers a file from source to destination.
+    /// Transfers a file from source to destination asynchronously.
     /// </summary>
     /// <param name="sourceFilePath">The source file path.</param>
     /// <param name="destinationFilePath">The destination file path.</param>
-    /// <param name="cancellationToken">Token to cancel the transfer.</param>
-    /// <returns>True if transfer was successful; otherwise false.</returns>
+    /// <param name="cancellationToken">Token to cancel the operation.</param>
+    /// <returns>True if transfer succeeded, false otherwise.</returns>
     Task<bool> TransferAsync(string sourceFilePath, string destinationFilePath, CancellationToken cancellationToken);
 }
